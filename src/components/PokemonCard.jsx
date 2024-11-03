@@ -3,11 +3,16 @@ import { Link } from "react-router-dom"
 
 export const PokemonCard = ({ card }) => {
 
+  const cardStyle = {
+    boxShadow: 'none', // Remove shadow
+    border: 'none',    // Remove border
+  };
+  
 
   return (
     <Grid2 justifyContent="center" xs={12} sm={6} md={4}>
-      <Link to={`/pokemon/${card.name}`} >
-      <Card className="cardPokemon">
+      <Link style={{ textDecoration: 'none' }} to={`/pokemon/${card.name}`} >
+      <Card style={cardStyle} className="cardPokemon">
         <CardMedia
           component="img"
           height="auto"

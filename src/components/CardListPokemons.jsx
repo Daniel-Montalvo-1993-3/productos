@@ -3,12 +3,15 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { getPokemons } from '../helpers/getPokemons';
 import { PokemonCard } from './PokemonCard';
 import { Container, Grid2, Skeleton } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { setPokemons } from '../redux/slices/pokemons';
 
 const CardListPokemons = () => {
     const [cards, setCards] = useState([]);
     const [hasMore, setHasMore] = useState(true);
     const [page, setPage] = useState(1);
     const [items, setItems] = useState(new Array(8).fill(0));
+    const dispatch = useDispatch();
 
 
     const loadCards = async () => {
@@ -19,6 +22,10 @@ const CardListPokemons = () => {
         }
         setPage((prevPage) => prevPage + 1);
     };
+
+    useEffect(() => {
+        dispatch(setPokemons(cards))
+    },[cards])
 
     useEffect(() => {
         loadCards();
