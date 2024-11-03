@@ -11,7 +11,7 @@ export const PokemonCard = ({ card }) => {
 
   return (
     <Grid2 justifyContent="center" xs={12} sm={6} md={4}>
-      <Link style={{ textDecoration: 'none' }} to={`/pokemon/${card.name}`} >
+      <Link style={{ textDecoration: 'none' }} to={`/pokemon/${card.id}`} >
       <Card style={cardStyle} className="cardPokemon">
         <CardMedia
           component="img"

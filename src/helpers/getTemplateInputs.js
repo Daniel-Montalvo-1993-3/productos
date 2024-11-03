@@ -1,20 +1,18 @@
 import axios from "axios";
 
-export const getPokemons = async (page, searchQuery) => {
+export const getDataInputs = async () => {
   const response = await axios({
     method: "get",
-    url: `${
-      import.meta.env.VITE_APP_POKEMON_TCG_API
-    }cards/?page=${page}&pageSize=8&q=name:${searchQuery}*`,
+    url: `https://run.mocky.io/v3/2280f387-5f05-499f-a15e-f0ee8c8f33cd`,
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer " + import.meta.env.VITE_APP_POKEMON_TCG_API_KEY,
     },
   })
     .then(function (resp) {
       if (resp.status === 200) {
         console.log(resp.data);
-        return resp.data;
+        const jsonString = resp.data.replace(/,\s*([\]}])/g, '$1');
+        return JSON.parse(jsonString);
       }
     })
     .catch(function (error) {

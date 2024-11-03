@@ -4,12 +4,12 @@ import { createSlice } from "@reduxjs/toolkit";
 export const pokemonSlice = createSlice({
     name: "pokemons",
     initialState: {
-        list: [],
+        list: localStorage.getItem('pokemons') ? JSON.parse(localStorage.getItem('pokemons')) : [],
     },
     reducers:{
         setPokemons:(state,action) => {
-            console.log("seteando pokemons en redux: ", action.payload);
             state.list = action.payload;
+            localStorage.setItem('pokemons', JSON.stringify(state.list));
         },
     }
 });

@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
@@ -22,7 +23,7 @@ const Header = () => {
     <>
       <ThemeProvider theme={theme}>
         <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="fixed" color="primary" enableColorOnDark>
+          <AppBar position="fixed" color="primary" enableColorOnDark sx={{ boxShadow: "none" }}>
             <Toolbar>
               <Box
                 component="img"
@@ -36,10 +37,14 @@ const Header = () => {
                 alt="Inicio"
                 src="https://unite.pokemon.com/images/footer/snorlax.png"
               />
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                INICIO
-              </Typography>
-              <Button color="secondary">Formulario</Button>
+              <Link style={{ width: '100%', color: 'white', textDecoration: 'none' }} to={`/`} >
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                  INICIO
+                </Typography>
+              </Link>
+              <Link style={{ color: 'white', textDecoration: 'none' }} to={`/formulario`} >
+                <Button color="secondary">Formulario</Button>
+              </Link>
             </Toolbar>
           </AppBar>
         </Box>
