@@ -1,15 +1,12 @@
-import { Button } from "@mui/material"
+import { AppRouter } from "./router/AppRouter"
 
-
-function AppProductos() {
-
+export const  AppProductos = () => {
   return (
     <>
-    <Button variant="contained" color="success">
-      Success
-    </Button>
+      <AppRouter />
     </>
   )
 }
+
 
 export default AppProductos
