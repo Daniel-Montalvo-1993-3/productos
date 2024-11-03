@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  background-color: #fff;
+}
+.cardPokemon {
+  cursor: pointer;
+  transition: all 0.7s ease-in-out !important;
+}
+
+.cardPokemon img:hover {
+  transform: scale(1.1);
+  -webkit-backface-visibility: hidden; 
+  -ms-transform: translateZ(0); /* IE 9 */
+  -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+  transform: translateZ(0);
+}
+.card-media {
+  transition: transform 0.3s, filter 0.3s;
+  filter: brightness(0.9);
+}
+
+.card-media:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1) saturate(1.5);
+}
