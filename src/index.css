@@ -2,19 +2,24 @@ body {
   margin: 0;
   background-color: #fff;
 }
+/* HEADER */
 .headerImage {
   max-width: 300px;
   margin: auto;
   display: block;
   padding: 100px 0 0px;
 }
+/* HOME Y SINGLE */
+.cardPokemon{
+  aspect-ratio: 2 / 3;
+}
 .cardPokemon,
 .card-media-single {
   cursor: pointer;
   transition: all 0.7s ease-in-out !important;
   max-width: 240px;
+  content-visibility: auto;
 }
-
 .cardPokemon img:hover,
 .card-media-single:hover {
   transform: scale(1.1);
@@ -31,7 +36,6 @@ body {
   transition: transform 0.3s, filter 0.3s;
   filter: brightness(0.9);
 }
-
 .card-media:hover,
 .card-media-single:hover {
   transform: scale(1.05);
@@ -41,7 +45,6 @@ body {
   transform: unset;
   filter: brightness(1.1) saturate(1.1);
 }
-
 .card-media-single {
   max-width: 400px;
   padding: 70px 50px;
@@ -61,17 +64,15 @@ body {
   z-index: 100000;
   background: #fff;
 }
-
-
+/* FORMULARIO */
 .error {
   border: 1px solid red;
 }
-
 .error-message {
   color: red;
   font-size: 12px;
 }
-
+/* Responsive */
 @media (max-width: 575px) {
   .headerImage {
     max-width: 150px;

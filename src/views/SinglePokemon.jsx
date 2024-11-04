@@ -9,12 +9,15 @@ const SinglePokemon = () => {
     const [pokemon, setPokemon] = useState([]);
 
     useEffect(() => {
+        // Funcion que filtra los datos del pokemon que se quiere ver 
+        // mediante el parametro pasado a la ruta y el store
         const filteredPokemon = pokemons.filter((pokemon) => {
             return pokemon.id === idPokemon;
         });
         setPokemon(filteredPokemon);
     }, [pokemons])
 
+    // Seteo de estilos para la carta
     const cardStyle = {
         boxShadow: 'none',
         border: 'none',
@@ -26,6 +29,7 @@ const SinglePokemon = () => {
                 pokemon.length > 0 ?
                     <>
                         <Grid2 container justifyContent="center" maxWidth="xl" sx={{ margin: 'auto' }}>
+                            {/* Represntacion de carta y texto del pokemon */}
                             <Grid2 xs={12} md={6} container justifyContent="center" alignItems="center">
                                 <CardMedia
                                     component="img"
@@ -62,6 +66,7 @@ const SinglePokemon = () => {
                         </Grid2>
                     </>
                     :
+                    // Elementos de carga mientars se obtienen datos de pokemones
                     <Grid2 container justifyContent="center" maxWidth="xl" sx={{ margin: 'auto', paddingTop: '50px' }}>
                         <Grid2 xs={12} md={6} container justifyContent="center" alignItems="center">
                             <Skeleton sx={{ bgcolor: 'grey.100' }} animation="wave" variant="rectangular" width={450} height={500} />

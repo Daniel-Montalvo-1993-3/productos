@@ -5,11 +5,10 @@ import Header from '../components/Header';
 const Home = lazy(() => import('../views/Home'));
 const SinglePokemon = lazy(() => import('../views/SinglePokemon'));
 const DynamicForm = lazy(() => import('../views/DynamicForm'));
-
+// Uso de suspense y lazy para carga diferida de componentes
 
 export const AppRouter = () => {
   const location = useLocation();
-
   return (
     <>
       <Suspense fallback={<div>Cargando...</div>}>

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const getPokemons = async (page, searchQuery) => {
+  // Obtencion de lista de pokemones
   const response = await axios({
     method: "get",
     url: `${

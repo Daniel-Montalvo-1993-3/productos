@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const getDataInputs = async () => {
+  // Obtencion de template para generar inputs
   const response = await axios({
     method: "get",
     url: `https://run.mocky.io/v3/2280f387-5f05-499f-a15e-f0ee8c8f33cd`,

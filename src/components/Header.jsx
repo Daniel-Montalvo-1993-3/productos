@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
+// Creacion de paleta para el header
 const theme = createTheme({
   palette: {
     primary: {
@@ -28,14 +29,14 @@ const Header = () => {
               <Box
                 component="img"
                 sx={{
-                  height: 'auto',
-                  width: '100%',
+                  width: '100',
+                  height: '49',
                   maxWidth: 100,
                   borderRadius: 0,
                   margin: '0 10px -15px 0',
                 }}
                 alt="Inicio"
-                src="https://unite.pokemon.com/images/footer/snorlax.png"
+                src="/images/snorlax.webp"
               />
               <Link style={{ width: '100%', color: 'white', textDecoration: 'none' }} to={`/`} >
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -49,7 +50,7 @@ const Header = () => {
           </AppBar>
         </Box>
       </ThemeProvider>
-      <img alt="pokemon" className="headerImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/800px-International_Pok%C3%A9mon_logo.svg.png" />
+      <img width="300" height="110" alt="pokemon" className="headerImage" src="/images/logo.webp" />
     </>
   )
 }
